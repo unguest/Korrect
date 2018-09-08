@@ -11,10 +11,15 @@ def levDist(str1, str2):
 	return lDist
 
 word = input("Entrez un mot : ")
-while len(word) = 0:
+while len(word) == 0:
 	word = input("Entrez un mot : ")
 
-with open("dico.txt", "r") as f:
+dicN = input("Entrez le chemin vers le dico : ")
+while len(word) == 0:
+	dicN = input("Entrez le chemin vers le dico : ")
+
+
+with open(str(dicN), "r") as f:
 	for word1 in f:
 		dist = levDist(word, word1)
 		if dist <= len(word) / 4:
