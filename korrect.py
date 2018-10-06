@@ -18,11 +18,13 @@ dicN = input("Entrez le chemin vers le dico : ")
 while len(word) == 0:
 	dicN = input("Entrez le chemin vers le dico : ")
 
-
-with open(str(dicN), "r") as f:
-	for word1 in f:
-		dist = levDist(word, word1)
-		if dist <= len(word) / 4:
-			print("Would you either say {} ?".format(word1))
-		else:
-			continue
+def korrect():
+	with open(str(dicN), "r") as f:
+		for word1 in f:
+			dist = levDist(word, word1)
+			if dist <= len(word) / 4:
+				print("Would you either say {} ?".format(word1))
+			else:
+				continue
+if __name__ == "__main__":
+	korrect()
