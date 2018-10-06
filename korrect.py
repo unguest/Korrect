@@ -10,16 +10,10 @@ def levDist(str1, str2):
 	lDist += len(set(str1) - set(str2))
 	return lDist
 
-word = input("Entrez un mot : ")
-while len(word) == 0:
-	word = input("Entrez un mot : ")
 
-dicN = input("Entrez le chemin vers le dico : ")
-while len(word) == 0:
-	dicN = input("Entrez le chemin vers le dico : ")
 
-def korrect():
-	with open(str(dicN), "r") as f:
+def korrect(word, dico):
+	with open(str(dico), "r") as f:
 		for word1 in f:
 			dist = levDist(word, word1)
 			if dist <= len(word) / 4:
@@ -27,4 +21,11 @@ def korrect():
 			else:
 				continue
 if __name__ == "__main__":
-	korrect()
+	word = input("Put a word : ")
+	while len(word) == 0:
+		word = input("Put a word : ")
+
+	dicN = input("Path to the dico : ")
+	while len(word) == 0:
+		dicN = input("Path to the dico : ")
+	korrect(word, dico)
